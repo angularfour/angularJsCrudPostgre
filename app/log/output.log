@@ -2,3 +2,5 @@
 [2017/10/02 03:52:38] [{"emp_id":1,"emp_name":"worker1","emp_email":"worker1@gmail.com","emp_gender":"male","emp_address":"av one"}]
 [2017/10/02 03:59:13] create a PostgreSQL database connection
 [2017/10/02 03:59:13] [{"emp_id":1,"emp_name":"worker1","emp_email":"worker1@gmail.com","emp_gender":"male","emp_address":"av one"}]
+[2017/10/02 04:06:12] create a PostgreSQL database connection
+[2017/10/02 04:06:13] [{"emp_id":1,"emp_name":"worker1","emp_email":"worker1@gmail.com","emp_gender":"male","emp_address":"av one"}]
