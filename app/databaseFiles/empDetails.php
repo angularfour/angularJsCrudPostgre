@@ -1,20 +1,25 @@
 <?php 
 
 include '../log/logger.php';
-// Including database connections
-require_once 'database_connections.php';
-// mysqli query to fetch all data from database
-$query = "SELECT * from emp_details ORDER BY emp_id ASC";
 
-$result = mysqli_query($con, $query);
+require_once 'database_connections.php';
+
+$sql = "SELECT emp_id, emp_name, emp_email, emp_gender, emp_address from emp_details";
+//$dsn = "mysql:host=localhost;dbname=employee";
+//$conn = new PDO($dsn,"usercom",123);
 
 $arr = array();
-if(mysqli_num_rows($result) != 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        $arr[] = $row;
-    }
+try{
+  $result = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+  //foreach($result as $row){
+    //echo $row['emp_id'];
+   // echo $row[0];
+  //}
+}catch(PDOException $e) {
+  logToFile($e->getMessage());
+  die();
 }
-// Return json array containing data from the databasecon
-echo $json_info = json_encode($arr);
-//logToFile(json_encode($json_info));
+echo $json_info = json_encode($result);
+logToFile($json_info);
+  
 ?>

@@ -1,6 +1,6 @@
 <?php 
     function logToFile($msg){
-        logToFileNamed("C:\git\angularJsCrud\app\log\output.log", $msg);
+        logToFileNamed("C:\git\angularJsCrudPostgre\app\log\output.log", $msg);
     }
     function logToFileNamed($filename, $msg) 
     {  
